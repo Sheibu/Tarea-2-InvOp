@@ -32,10 +32,10 @@ public class Tarea2 {
         /**
          * Se instancia el problema a resolver
          */
-        nombreProblema = "S8";
+        //nombreProblema = "S8";
         //nombreProblema = "SRFLP_Rubio_AnKeVa_500_03.txt";
         //nombreProblema = "SRFLP2_N_110_L_5_14_F_0_100.txt";
-        //nombreProblema = "QAP_sko56_04_n";
+        nombreProblema = "QAP_sko56_04_n";
         //nombreProblema = "test.txt";
         
         problema = new SRFLP(nombreProblema);
@@ -63,6 +63,13 @@ public class Tarea2 {
         for(int i=0;i<nPruebas;i++){
             System.out.println(Arrays.toString(soluciones.get(i))+" Valor = "+problema.getObjectiveFunction(soluciones.get(i)));
         }
+        System.out.println();
+        
+        int[] mejorSolucionFinal = algoritmo.mejorSolucion(soluciones);
+        
+        System.out.println("La mejor solucion obtenida es:");
+        System.out.println(Arrays.toString(mejorSolucionFinal));
+        System.out.println("Y su valor es: "+problema.getObjectiveFunction(mejorSolucionFinal));
         System.out.println();
         
         /**
